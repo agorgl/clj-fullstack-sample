@@ -1,0 +1,17 @@
+{:deps {:aliases [:cljs :dev]}
+
+ :nrepl
+ {:port 8777
+  :init-ns user}
+
+ :dev-http
+ {8280 "resources/public"}
+
+ :builds
+ {:app
+  {:target     :browser
+   :output-dir "resources/public/js/compiled"
+   :asset-path "/js/compiled"
+   :modules    {:app {:init-fn com.example.clj-fullstack-sample.com.example.clj-fullstack-sample.core/init}}
+   :devtools   {:repl-init-ns user
+                :watch-dir "resources/public"}}}}
